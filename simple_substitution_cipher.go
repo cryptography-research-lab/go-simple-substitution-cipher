@@ -37,8 +37,9 @@ func checkKey(key string) error {
 	return nil
 }
 
-// 转换为字母，如果有必要的话
+// 转换为大写字母，如果有必要的话
 func toUppercaseIfNeed(char rune) rune {
+	// 仅当为小写字母的时候才转换，其他字符的话就原样返回 
 	if char >= 'a' && char <= 'z' {
 		char -= 32
 	}
