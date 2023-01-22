@@ -39,7 +39,7 @@ func checkKey(key string) error {
 
 // 转换为大写字母，如果有必要的话
 func toUppercaseIfNeed(char rune) rune {
-	// 仅当为小写字母的时候才转换，其他字符的话就原样返回 
+	// 仅当为小写字母的时候才转换，其他字符的话就原样返回
 	if char >= 'a' && char <= 'z' {
 		char -= 32
 	}
@@ -58,7 +58,7 @@ func RandomKey() string {
 	}
 
 	// 然后对序列进行shuffle
-	shuffle.FisherYatesKnuthShuffle(key)
+	shuffle.Shuffle(key)
 
 	return string(key)
 }
@@ -107,7 +107,7 @@ func Decrypt(ciphertext, key string) (string, error) {
 	return string(plaintext), nil
 }
 
-// 把key转为方便解密使用的形式
+// 把key转为方便解密使用的形式，即使其能够O(1)复杂度的按照密文去查询对应的明文
 func convertKeyForDecrypt(key string) string {
 	decryptKey := make([]rune, 26)
 	for index, char := range key {

@@ -3,7 +3,7 @@ module github.com/cryptography-research-lab/go-simple-substitution-cipher
 go 1.18
 
 require (
-	github.com/golang-infrastructure/go-shuffle v0.0.0-20221209150116-28fd05dbba09
+	github.com/golang-infrastructure/go-shuffle v0.0.0-20230122134927-a3796de7f223
 	github.com/stretchr/testify v1.8.1
 )
 
